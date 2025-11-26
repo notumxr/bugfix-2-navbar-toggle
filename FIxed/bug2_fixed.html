@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug 2 - Navbar (Fixed)</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            background: #222;
+            padding: 15px;
+            color: white;
+        }
+
+        .menu {
+            display: none;
+            background: #333;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <h2>My Website</h2>
+        <button id="toggle">☰ Menu</button>
+    </div>
+
+    <div class="menu" id="menubar">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <script>
+        // FIXED VERSION
+        document.getElementById("toggle").addEventListener("click", () => {
+
+            let menu = document.getElementById("menubar");
+
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>
